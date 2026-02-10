@@ -323,30 +323,27 @@ footer {
         gap: 15px;
         font-size: 0.8rem;
     }
-	/* =========================================
-   PROJECT DETAILS (Client, Platform, etc.)
+/* =========================================
+	   PROJECT DETAILS (Compact & Italic)
    ========================================= */
 
-.project-details {
-    margin-bottom: 20px;
-    background: rgba(15, 23, 42, 0.5); /* Fondo sutil */
-    padding: 10px 15px;
-    border-radius: 6px;
-    border-left: 2px solid #334155;
-}
+	.project-details {
+		margin-bottom: 15px;      
+		padding: 5px 10px;        
+		border-left: 2px solid #334155; 
+		background: rgba(15, 23, 42, 0.3); 
+		font-style: italic;
+	}
 
-.project-details p {
-    margin-bottom: 4px; /* Menos espacio entre líneas */
-    font-size: 0.9rem;
-    color: #94a3b8;
-}
+	.project-details p {
+		margin: 0;                
+		line-height: 1.4;         
+		font-size: 0.85rem;      
+		color: #94a3b8;
+	}
 
-.project-details strong {
-    color: #cbd5e1; /* Título un poco más claro */
-    margin-right: 5px;
-}
-
-.project-details p:last-child {
-    margin-bottom: 0;
-}
+	.project-details strong {
+		color: #cbd5e1;
+		margin-right: 4px;
+	}
 }
