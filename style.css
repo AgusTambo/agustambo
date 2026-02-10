@@ -1,106 +1,169 @@
-/* --- Global Fixes --- */
+/* --- Global & Reset --- */
 html {
     scroll-behavior: smooth;
-    /* This solves the overlap: adjusts for the height of the Nav bar */
-    scroll-padding-top: 80px; 
+    scroll-padding-top: 80px; /* Evita que el menú tape los títulos */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Inter', -apple-system, sans-serif;
     line-height: 1.6;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
-    background-color: #0f172a; /* Restored solid dark background */
-    color: #cbd5e1; /* Clearer, softer white for readability */
+    background-color: #0f172a; /* Fondo azul oscuro sólido */
+    color: #cbd5e1; /* Texto gris claro para buen contraste */
+    padding-bottom: 50px;
 }
 
 /* --- Navigation --- */
 nav {
-    background: rgba(15, 23, 42, 0.95);
+    background: rgba(15, 23, 42, 0.95); /* Casi opaco */
     position: fixed;
     top: 0; left: 0; width: 100%;
-    padding: 15px 0;
+    padding: 20px 0;
     z-index: 1000;
     border-bottom: 1px solid #1e293b;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 30px;
 }
 
 nav a {
     color: #94a3b8;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
 }
 
 nav a:hover { color: #38bdf8; }
 
-/* --- Header (Centered) --- */
-header { 
-    text-align: center; 
-    padding: 120px 0 60px 0; /* Extra top padding for Nav */
-    border-bottom: 1px solid #1e293b; 
+/* --- Layout --- */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-h1 { color: #f8fafc; font-size: 2.8rem; margin: 0; }
-.subtitle { color: #38bdf8; font-weight: bold; font-size: 1.3rem; margin-top: 8px; }
-.location { color: #94a3b8; margin-top: 5px; }
+/* --- Header (Centered) --- */
+header {
+    text-align: center;
+    padding-top: 140px; /* Espacio extra por el menú fijo */
+    margin-bottom: 60px;
+    border-bottom: 1px solid #1e293b;
+    padding-bottom: 40px;
+}
 
-.header-links { margin-top: 25px; }
+h1 {
+    color: #f8fafc;
+    font-size: 3rem;
+    margin-bottom: 5px;
+    letter-spacing: -1px;
+}
 
+.subtitle {
+    color: #38bdf8; /* Azul cyan vibrante */
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.location {
+    color: #94a3b8;
+    margin-bottom: 25px;
+}
+
+/* --- Buttons --- */
 .btn {
     display: inline-block;
-    background: #0284c7;
-    color: white;
-    padding: 12px 24px;
-    text-decoration: none;
+    background-color: #0ea5e9;
+    color: #ffffff;
+    padding: 10px 24px;
     border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
     margin: 5px;
-    transition: 0.3s;
-    font-weight: 500;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
-.btn:hover { background: #0ea5e9; transform: translateY(-2px); }
+.btn:hover {
+    background-color: #0284c7;
+    transform: translateY(-2px);
+}
 
-/* --- Containers (Solid Style) --- */
-section { margin-top: 60px; }
-h2 { color: #f8fafc; margin-bottom: 25px; font-size: 1.8rem; }
+/* --- Sections --- */
+section {
+    margin-bottom: 80px;
+}
 
-/* Skill container restoration */
+h2 {
+    color: #f8fafc;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    border-left: 4px solid #38bdf8;
+    padding-left: 15px;
+}
+
+/* --- Skills --- */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .skills-container span {
-    background: #1e293b;
+    background-color: #1e293b;
+    color: #e2e8f0;
     padding: 8px 16px;
     border-radius: 6px;
-    margin: 6px;
-    display: inline-block;
     font-size: 0.95rem;
     border: 1px solid #334155;
-    color: #f1f5f9;
 }
 
-/* Project cards restoration */
+/* --- Cards (Experience & Projects) --- */
 .project-card {
-    background: #1e293b;
-    padding: 30px;
-    border-radius: 10px;
-    margin-bottom: 25px;
+    background-color: #1e293b;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
     border: 1px solid #334155;
+    transition: transform 0.2s;
 }
 
-.project-card h3 { color: #38bdf8; margin: 0 0 10px 0; font-size: 1.4rem; }
-.date { display: block; color: #94a3b8; font-size: 0.85rem; margin-bottom: 15px; text-transform: uppercase; }
+.project-card:hover {
+    transform: translateY(-3px);
+    border-color: #475569;
+}
 
-footer { 
-    text-align: center; 
-    padding: 60px 0; 
-    border-top: 1px solid #1e293b; 
-    margin-top: 60px;
-    opacity: 0.6;
+.project-card h3 {
+    color: #38bdf8;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+}
+
+.date, .client {
+    display: block;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    border-top: 1px solid #1e293b;
+    padding-top: 30px;
+    color: #64748b;
+    font-size: 0.9rem;
 }
