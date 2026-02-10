@@ -285,6 +285,29 @@ p {
 }
 
 /* =========================================
+   PROJECT DETAILS (Compact & Italic)
+   ========================================= */
+.project-details {
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    border-left: 2px solid #334155;
+    background: rgba(15, 23, 42, 0.3);
+    font-style: italic;
+}
+
+.project-details p {
+    margin: 0;
+    line-height: 1.4;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+.project-details strong {
+    color: #cbd5e1;
+    margin-right: 4px;
+}
+
+/* =========================================
    FOOTER
    ========================================= */
 footer {
@@ -323,27 +346,4 @@ footer {
         gap: 15px;
         font-size: 0.8rem;
     }
-/* =========================================
-	   PROJECT DETAILS (Compact & Italic)
-   ========================================= */
-
-	.project-details {
-		margin-bottom: 15px;      
-		padding: 5px 10px;        
-		border-left: 2px solid #334155; 
-		background: rgba(15, 23, 42, 0.3); 
-		font-style: italic;
-	}
-
-	.project-details p {
-		margin: 0;                
-		line-height: 1.4;         
-		font-size: 0.85rem;      
-		color: #94a3b8;
-	}
-
-	.project-details strong {
-		color: #cbd5e1;
-		margin-right: 4px;
-	}
 }
