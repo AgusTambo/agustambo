@@ -3,7 +3,7 @@
    ========================================= */
 html {
     scroll-behavior: smooth;
-    /* Prevents the fixed menu from covering section titles when clicking links */
+    /* Evita que el menú tape los títulos al hacer clic */
     scroll-padding-top: 100px;
 }
 
@@ -16,8 +16,8 @@ html {
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
-    background-color: #0f172a; /* Dark Slate Blue Background */
-    color: #cbd5e1; /* Soft White Text */
+    background-color: #0f172a; /* Azul Pizarra Oscuro */
+    color: #cbd5e1; /* Texto blanco suave */
     padding-bottom: 60px;
 }
 
@@ -29,8 +29,8 @@ a {
    NAVIGATION (FIXED TOP)
    ========================================= */
 nav {
-    background: rgba(15, 23, 42, 0.95); /* Semi-transparent dark bg */
-    backdrop-filter: blur(8px); /* Blur effect behind menu */
+    background: rgba(15, 23, 42, 0.95); /* Fondo semi-transparente */
+    backdrop-filter: blur(8px);
     position: fixed;
     top: 0; 
     left: 0; 
@@ -58,7 +58,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #38bdf8; /* Sky Blue Accent */
+    color: #38bdf8; /* Azul Cielo */
 }
 
 /* =========================================
@@ -75,7 +75,7 @@ nav a:hover {
    ========================================= */
 header {
     text-align: center;
-    padding-top: 160px; /* Extra space for fixed nav */
+    padding-top: 160px; /* Espacio extra por el menú fijo */
     margin-bottom: 80px;
     border-bottom: 1px solid #1e293b;
     padding-bottom: 40px;
@@ -170,7 +170,7 @@ p {
 }
 
 /* =========================================
-   PROJECT CARDS (NEW LAYOUT)
+   PROJECT CARDS (MAIN LAYOUT)
    ========================================= */
 .project-card {
     background-color: #1e293b;
@@ -194,17 +194,17 @@ p {
 }
 
 .card-text {
-    flex: 2; /* Text takes 2/3 of space */
+    flex: 2; /* Texto ocupa 2/3 */
 }
 
 .card-media {
-    flex: 1; /* Images take 1/3 of space */
+    flex: 1; /* Imagen ocupa 1/3 */
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-/* --- Card Header & Typography --- */
+/* --- Card Typography --- */
 .card-header {
     display: flex;
     justify-content: space-between;
@@ -246,6 +246,31 @@ p {
     border-bottom: 1px solid #38bdf8;
 }
 
+/* --- Project Details (Compact & Italic) --- */
+/* Esta es la parte importante que arreglamos */
+.project-details {
+    margin-bottom: 15px;
+    padding: 8px 12px;
+    border-left: 2px solid #38bdf8; /* Línea cian */
+    background: rgba(15, 23, 42, 0.4); /* Fondo sutil */
+    font-style: italic; /* Texto cursiva */
+    border-radius: 0 4px 4px 0;
+}
+
+.project-details p {
+    margin: 0; /* Sin espacio extra */
+    line-height: 1.4; /* Líneas pegaditas */
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.project-details strong {
+    color: #e2e8f0; /* Blanco un poco más fuerte */
+    font-weight: 600;
+    margin-right: 4px;
+    font-style: normal; /* El título "Client:" queda normal, el resto itálico */
+}
+
 /* --- Images Styling --- */
 .project-img {
     width: 100%;
@@ -285,29 +310,6 @@ p {
 }
 
 /* =========================================
-   PROJECT DETAILS (Compact & Italic)
-   ========================================= */
-.project-details {
-    margin-bottom: 15px;
-    padding: 5px 10px;
-    border-left: 2px solid #334155;
-    background: rgba(15, 23, 42, 0.3);
-    font-style: italic;
-}
-
-.project-details p {
-    margin: 0;
-    line-height: 1.4;
-    font-size: 0.85rem;
-    color: #94a3b8;
-}
-
-.project-details strong {
-    color: #cbd5e1;
-    margin-right: 4px;
-}
-
-/* =========================================
    FOOTER
    ========================================= */
 footer {
@@ -323,25 +325,26 @@ footer {
    MOBILE RESPONSIVENESS
    ========================================= */
 @media (max-width: 768px) {
-    /* Adjust header size */
+    /* Ajuste de tamaño de título */
     h1 { font-size: 2.2rem; }
     
-    /* Stack the project card columns */
+    /* Apilar columnas en vertical */
     .card-body {
         flex-direction: column; 
     }
     
+    /* Imágenes lado a lado en móvil */
     .card-media {
         width: 100%;
-        flex-direction: row; /* Keep images side-by-side on mobile if possible */
+        flex-direction: row; 
         justify-content: center;
     }
 
     .project-img {
-        width: 48%; /* Split images in half on mobile */
+        width: 48%; /* Mitad y mitad */
     }
 
-    /* Stack nav items if screen is very small */
+    /* Menú apilado si es muy pequeño */
     nav ul {
         gap: 15px;
         font-size: 0.8rem;
