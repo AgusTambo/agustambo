@@ -167,3 +167,47 @@ footer {
     color: #64748b;
     font-size: 0.9rem;
 }
+
+/* --- Nuevos Estilos para Proyectos --- */
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.date-badge {
+    background-color: #334155;
+    color: #94a3b8;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid #475569;
+}
+
+.project-img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #334155;
+    /* Efecto opcional: un poco transparente hasta que pasas el mouse */
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.project-img:hover {
+    opacity: 1;
+}
+
+.client a {
+    color: #38bdf8;
+    text-decoration: none;
+    border-bottom: 1px dashed #38bdf8;
+}
+
+.client a:hover {
+    border-bottom: 1px solid #38bdf8;
+}
