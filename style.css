@@ -1,7 +1,10 @@
-/* --- Global & Reset --- */
+/* =========================================
+   GLOBAL RESET & BASICS
+   ========================================= */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Evita que el menú tape los títulos */
+    /* Prevents the fixed menu from covering section titles when clicking links */
+    scroll-padding-top: 100px;
 }
 
 * {
@@ -11,19 +14,28 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
-    background-color: #0f172a; /* Fondo azul oscuro sólido */
-    color: #cbd5e1; /* Texto gris claro para buen contraste */
-    padding-bottom: 50px;
+    background-color: #0f172a; /* Dark Slate Blue Background */
+    color: #cbd5e1; /* Soft White Text */
+    padding-bottom: 60px;
 }
 
-/* --- Navigation --- */
+a {
+    transition: color 0.3s ease;
+}
+
+/* =========================================
+   NAVIGATION (FIXED TOP)
+   ========================================= */
 nav {
-    background: rgba(15, 23, 42, 0.95); /* Casi opaco */
+    background: rgba(15, 23, 42, 0.95); /* Semi-transparent dark bg */
+    backdrop-filter: blur(8px); /* Blur effect behind menu */
     position: fixed;
-    top: 0; left: 0; width: 100%;
-    padding: 20px 0;
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    padding: 15px 0;
     z-index: 1000;
     border-bottom: 1px solid #1e293b;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
@@ -39,27 +51,32 @@ nav ul {
 nav a {
     color: #94a3b8;
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: color 0.3s;
+    letter-spacing: 1px;
 }
 
-nav a:hover { color: #38bdf8; }
+nav a:hover {
+    color: #38bdf8; /* Sky Blue Accent */
+}
 
-/* --- Layout --- */
+/* =========================================
+   MAIN LAYOUT CONTAINER
+   ========================================= */
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* --- Header (Centered) --- */
+/* =========================================
+   HEADER (HERO SECTION)
+   ========================================= */
 header {
     text-align: center;
-    padding-top: 140px; /* Espacio extra por el menú fijo */
-    margin-bottom: 60px;
+    padding-top: 160px; /* Extra space for fixed nav */
+    margin-bottom: 80px;
     border-bottom: 1px solid #1e293b;
     padding-bottom: 40px;
 }
@@ -67,12 +84,13 @@ header {
 h1 {
     color: #f8fafc;
     font-size: 3rem;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     letter-spacing: -1px;
+    font-weight: 700;
 }
 
 .subtitle {
-    color: #38bdf8; /* Azul cyan vibrante */
+    color: #38bdf8;
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 5px;
@@ -80,41 +98,56 @@ h1 {
 
 .location {
     color: #94a3b8;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    font-size: 1rem;
 }
 
-/* --- Buttons --- */
+/* --- Action Buttons --- */
+.header-links {
+    margin-top: 20px;
+}
+
 .btn {
     display: inline-block;
     background-color: #0ea5e9;
     color: #ffffff;
-    padding: 10px 24px;
+    padding: 12px 28px;
     border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
     margin: 5px;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: transform 0.2s, background-color 0.2s;
+    border: 1px solid transparent;
 }
 
 .btn:hover {
     background-color: #0284c7;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
 }
 
-/* --- Sections --- */
+/* =========================================
+   SECTIONS GENERAL
+   ========================================= */
 section {
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 }
 
 h2 {
     color: #f8fafc;
     font-size: 1.8rem;
     margin-bottom: 30px;
-    border-left: 4px solid #38bdf8;
-    padding-left: 15px;
+    border-left: 5px solid #38bdf8;
+    padding-left: 20px;
 }
 
-/* --- Skills --- */
+p {
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   SKILLS SECTION
+   ========================================= */
 .skills-container {
     display: flex;
     flex-wrap: wrap;
@@ -126,80 +159,81 @@ h2 {
     color: #e2e8f0;
     padding: 8px 16px;
     border-radius: 6px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    font-weight: 500;
     border: 1px solid #334155;
+    transition: border-color 0.3s;
 }
 
-/* --- Cards (Experience & Projects) --- */
+.skills-container span:hover {
+    border-color: #38bdf8;
+}
+
+/* =========================================
+   PROJECT CARDS (NEW LAYOUT)
+   ========================================= */
 .project-card {
     background-color: #1e293b;
-    padding: 25px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
     border: 1px solid #334155;
-    transition: transform 0.2s;
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
     border-color: #475569;
 }
 
-.project-card h3 {
-    color: #38bdf8;
-    margin-bottom: 5px;
-    font-size: 1.3rem;
+/* --- Internal Layout: Text Left / Images Right --- */
+.card-body {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
 }
 
-.date, .client {
-    display: block;
-    color: #94a3b8;
-    font-size: 0.9rem;
-    margin-bottom: 12px;
-    font-style: italic;
+.card-text {
+    flex: 2; /* Text takes 2/3 of space */
 }
 
-/* --- Footer --- */
-footer {
-    text-align: center;
-    border-top: 1px solid #1e293b;
-    padding-top: 30px;
-    color: #64748b;
-    font-size: 0.9rem;
+.card-media {
+    flex: 1; /* Images take 1/3 of space */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* --- Nuevos Estilos para Proyectos --- */
-
+/* --- Card Header & Typography --- */
 .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-card h3 {
+    color: #38bdf8;
+    margin: 0;
+    font-size: 1.5rem;
 }
 
 .date-badge {
-    background-color: #334155;
+    background-color: #0f172a;
     color: #94a3b8;
     padding: 4px 10px;
     border-radius: 4px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    border: 1px solid #475569;
-}
-
-.project-img {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    margin-bottom: 15px;
+    font-size: 0.8rem;
+    font-weight: 700;
     border: 1px solid #334155;
-    /* Efecto opcional: un poco transparente hasta que pasas el mouse */
-    opacity: 0.9;
-    transition: opacity 0.3s;
 }
 
-.project-img:hover {
-    opacity: 1;
+.client {
+    margin-bottom: 15px;
+    color: #94a3b8;
+    font-size: 0.95rem;
 }
 
 .client a {
@@ -210,4 +244,83 @@ footer {
 
 .client a:hover {
     border-bottom: 1px solid #38bdf8;
+}
+
+/* --- Images Styling --- */
+.project-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #0f172a;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.project-img:hover {
+    transform: scale(1.03);
+    border-color: #38bdf8;
+    z-index: 10;
+}
+
+/* --- Bottom Tech Badges --- */
+.tech-stack {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px dashed #334155;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-badge {
+    background-color: #0f172a;
+    color: #38bdf8;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #334155;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    text-align: center;
+    border-top: 1px solid #1e293b;
+    padding-top: 40px;
+    margin-top: 80px;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 768px) {
+    /* Adjust header size */
+    h1 { font-size: 2.2rem; }
+    
+    /* Stack the project card columns */
+    .card-body {
+        flex-direction: column; 
+    }
+    
+    .card-media {
+        width: 100%;
+        flex-direction: row; /* Keep images side-by-side on mobile if possible */
+        justify-content: center;
+    }
+
+    .project-img {
+        width: 48%; /* Split images in half on mobile */
+    }
+
+    /* Stack nav items if screen is very small */
+    nav ul {
+        gap: 15px;
+        font-size: 0.8rem;
+    }
 }
